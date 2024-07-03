@@ -75,6 +75,13 @@ define(['N/log', 'N/search'], function(log, search) {
                 resultObj.values = values;
                 response.results.push(resultObj);
             });
+            
+            response.pagingInfo = {
+                currentPage: pageNumber,
+                lastPage: pagedData.pageRanges.length,
+                pageSize: pageSize,
+                resultsOnPage: page.data.length
+            };
 
             return response;
 
